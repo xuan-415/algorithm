@@ -12,21 +12,21 @@ def koch(Distance,order):
 
 
 def T():
-    canvas.delete("all")
     turtle.speed(10)
     turtle.penup()
     turtle.goto(-125,25)    #起始位置
     turtle.setheading(0)    #畫筆方向(0 東 90 北 180西 270南)
-
+   
+    turtle.clear()
     turtle.pendown()
     turtle.pencolor("#002742")
     for i in range(3):
         koch(150,int(Input1.get()))
         turtle.pencolor("#004474")
-        turtle.left(-120)
+        turtle.left(-120)           #turtle.right() 裡面的值填的是角度
 
-    
 
+        
 
 win = tk.Tk()
 win.title("snowflake")  #視窗名稱
@@ -34,7 +34,8 @@ win.geometry("600x650") #視窗大小
 
 canvas = tk.Canvas(win,width = 600, height = 600) #畫布大小
 canvas.pack()
-canvas.place(x = 0,y = 50)
+canvas.place(x = 0,y = 0)    ##設立中心位置
+
 
 turtle = turtle.RawTurtle(canvas)
 
